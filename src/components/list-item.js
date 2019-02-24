@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import ListItemDetail from './list-item-detail';
+
 
 export default class ListItem extends Component{
     state = {
@@ -30,12 +30,6 @@ export default class ListItem extends Component{
                         <NavLink className="album-name__item" key={album.id} to="/list/detail">{album.title}</NavLink>
                     )
                 }) }
-                <Router>
-                    <Switch>
-                        <Route path="/list/detail" exact component={ ListItemDetail } />
-                        <Route component={ Error } />
-                    </Switch>
-                </Router>
             </div>
         )
     }

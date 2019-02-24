@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-do
 import ListItem from './list-item';
 import Users from './users';
 import Error from './error';
+import ListItemDetail from './list-item-detail';
 
 export default class List extends Component{
     render(){
@@ -16,6 +17,7 @@ export default class List extends Component{
                     <Switch>
                         <Route path="/list" exact component={ ListItem } />
                         <Route path="/users" exact component={ Users } />
+                        <Route path="/list/detail" exact component={ ListItemDetail } />
                         <Route component={ Error } />
                     </Switch>
                 </div>

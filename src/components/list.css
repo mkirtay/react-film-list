@@ -1,0 +1,29 @@
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.album-name__item, .user-name__item {
+    max-width: 310px;
+    padding: 20px;
+    box-shadow: 0 6px 12px -4px rgba(37,51,66,0.2);
+    background-color: #ffffff;
+    border: 1px solid #dce1e6;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+.link {
+    padding: 10px;
+    background: #f1f1f1;
+    text-decoration: none;
+    color: #000;
+    margin-right: 10px;
+}
+
+.link--active {
+    color: #fff;
+    background: #b74444;
+}

@@ -17,7 +17,7 @@ export default class List extends Component{
                     <Switch>
                         <Route path="/list" exact component={ ListItem } />
                         <Route path="/users" exact component={ Users } />
-                        <Route path="/list/detail" exact component={ ListItemDetail } />
+                        <Route path="/list/detail" exact component={ () => <ListItemDetail /> } />
                         <Route component={ Error } />
                     </Switch>
                 </div>

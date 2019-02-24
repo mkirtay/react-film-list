@@ -5,29 +5,29 @@ import { NavLink } from 'react-router-dom';
 
 export default class ListItem extends Component{
     state = {
-        albums: []
+        comments: []
     };
 
     componentWillMount(){
-        fetch('https://jsonplaceholder.typicode.com/albums')
+        fetch('https://jsonplaceholder.typicode.com/comments')
             .then(data => data.json())
-            .then(albums => {
+            .then(comments => {
                 this.setState(
-                    { albums }
+                    { comments }
                 )
             })
     };
 
-    componentDidMount(){
-        console.log( this.state.albums )
-    }
-
     render(){
         return(
-            <div className='album-name m-t-30'>
-                { this.state.albums.map( (album) => {
+            <div className='comment-name m-t-30'>
+                { this.state.comments.map( (comment) => {
                     return(
-                        <NavLink className="album-name__item" key={album.id} to="/list/detail">{album.title}</NavLink>
+                        <NavLink commentName={comment.name} email={comment.email} className="comment-name__item" key={comment.id} to="/list/detail">
+                            Comment name: {comment.name}
+                            <br/><br/>
+                            E-mail: <span>{comment.email}</span>
+                        </NavLink>
                     )
                 }) }
             </div>

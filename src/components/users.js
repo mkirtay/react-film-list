@@ -23,7 +23,7 @@ export default class Users extends Component{
             <div className='user-list m-t-30'>
                 { this.state.films.map( (film) => {
                     return(
-                        <NavLink className="user-name__item" key={film.imdbID} to="/list/:film.imdbID" >
+                        <NavLink className="user-name__item" key={film.imdbID} to={"/list/" + film.imdbID} >
                             Film Name: {film.Title} <br/>
                             Year: {film.Year}
                             {film.imdbID}

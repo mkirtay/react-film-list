@@ -23,7 +23,7 @@ export default class ListItem extends Component{
             <div className='comment-name m-t-30'>
                 { this.state.comments.map( (comment) => {
                     return(
-                        <NavLink commentName={comment.name} email={comment.email} className="comment-name__item" key={comment.id} to="/list/detail">
+                        <NavLink className="comment-name__item" key={comment.id} to="/list/detail">
                             Comment name: {comment.name}
                             <br/><br/>
                             E-mail: <span>{comment.email}</span>

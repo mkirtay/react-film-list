@@ -1,29 +1,33 @@
 import React, {Component} from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default class Users extends Component{
 
     state = {
-        users: []
+        films: []
     };
 
     componentWillMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://www.omdbapi.com/?s=star%20wars&apikey=f1866b1e')
             .then(data => data.json())
-            .then(users => {
+            .then(dataFilms => {
                 this.setState(
-                    { users }
+                    { films: dataFilms.Search}
                 )
+                console.log(dataFilms.Search[0].imdbID)
             })
     };
 
     render(){
         return(
             <div className='user-list m-t-30'>
-                { this.state.users.map( (user) => {
+                { this.state.films.map( (film) => {
                     return(
-                        <span className="user-name__item" key={user.id}>
-                            {user.name}
-                        </span>
+                        <NavLink className="user-name__item" key={film.imdbID} to="/list/:film.imdbID" >
+                            Film Name: {film.Title} <br/>
+                            Year: {film.Year}
+                            {film.imdbID}
+                        </NavLink>
                     )
                 }) }
             </div>

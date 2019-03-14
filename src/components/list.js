@@ -7,6 +7,11 @@ import Users from './users';
 import Error from './error';
 import ListItemDetail from './list-item-detail';
 
+const News = (route) => {
+    console.log(route)
+    return( <h1>Test</h1> )
+}
+
 export default class List extends Component{
     render(){
         return(
@@ -17,7 +22,7 @@ export default class List extends Component{
                     <Switch>
                         <Route path="/list" exact component={ ListItem } />
                         <Route path="/users" exact component={ Users } />
-                        <Route path="/list/detail" exact component={ () => <ListItemDetail /> } />
+                        <Route path="/list/:id" exact component={ News } />
                         <Route component={ Error } />
                     </Switch>
                 </div>

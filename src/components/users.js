@@ -14,7 +14,6 @@ export default class Users extends Component{
                 this.setState(
                     { films: dataFilms.Search}
                 )
-                console.log(dataFilms.Search[0].imdbID)
             })
     };
 
@@ -25,7 +24,7 @@ export default class Users extends Component{
                     return(
                         <NavLink className="user-name__item" key={film.imdbID} to={"/list/" + film.imdbID} >
                             Film Name: {film.Title} <br/>
-                            Year: {film.Year}
+                            Year: {film.Year} <br/>
                             {film.imdbID}
                         </NavLink>
                     )
